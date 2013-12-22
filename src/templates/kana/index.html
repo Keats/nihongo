@@ -1,9 +1,13 @@
 <p>Answer in kana or romaji and press Enter</p>
 
 <div class="row">
-<form ng-submit="checkAnswer()" class="large-3 columns">
-  <input type="text" ng-model="answer"/>
-</form>
+  <div class="large-4 columns">
+    <form ng-submit="checkAnswer()">
+      <input type="text" ng-model="answer" />
+    </form>
+  </div>
 
-<p class="large-9 columns">{{ question.kana }}</p>
+  <p class="large-8 columns">{{ question.kana }}</p>
 </div>
+
+Score: {{ score.right }} right | {{ score.wrong }} wrong
