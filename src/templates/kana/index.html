@@ -1,5 +1,11 @@
 
 <div class="large-6 columns large-centered question">
+  <span class="alert-box" ng-if="mistake">
+    You entered "{{ mistake.entered }}" for {{ mistake.question }}.
+    <br>
+    The answer was "{{ mistake.answer }}".
+  </span>
+
   <h2>{{ question.kana }}</h2>
 
   <div>
