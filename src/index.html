@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="nihongo">
+<html ng-app="nihongo" ng-controller="AppCtrl">
   <head>
     <title ng-bind="pageTitle"></title>
 
@@ -16,8 +16,20 @@
   </head>
 
   <body>
-    <h1>Hello</h1>
-    <div class="container" ui-view="main"></div>
+    <div class="container row">
+
+      <div class="large-3 columns">
+        <ul class="side-nav">
+          <li><a href="#">Home</a></li>
+          <li class="divider"></li>
+          <li><a ui-sref="hiragana">Hiragana</a></li>
+          <li><a href="#">Katakana</a></li>
+        </ul>
+      </div>
+
+      <div class="large-9 columns" ui-view></div>
+    </div>
+
   </body>
 
 </html>

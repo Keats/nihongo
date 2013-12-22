@@ -1,7 +1,9 @@
-<p>Answer in kana or romaji</p>
+<p>Answer in kana or romaji and press Enter</p>
 
-<form ng-submit=checkAnswer()>
+<div class="row">
+<form ng-submit="checkAnswer()" class="large-3 columns">
   <input type="text" ng-model="answer"/>
 </form>
 
-<p>{{ question.kana }}</p>
+<p class="large-9 columns">{{ question.kana }}</p>
+</div>

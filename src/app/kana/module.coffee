@@ -8,10 +8,10 @@ modules = [
 home = angular.module 'nihongo.kana', modules
 
 home.config ['$stateProvider', ($stateProvider) ->
-  $stateProvider.state "hiragana",
-    url: "/hiragana"
-    views:
-      main:
-        controller: "HiraganaCtrl"
-        templateUrl: "kana/index.html"
+  $stateProvider.state 'hiragana',
+    url: '/hiragana'
+    controller: 'HiraganaCtrl'
+    templateUrl: 'kana/index.html'
+    data:
+      pageTitle: 'Hiragana'
 ]
