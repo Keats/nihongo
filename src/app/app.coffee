@@ -19,4 +19,6 @@ appModule.controller 'AppCtrl', ['$scope', '$location', ($scope, $location) ->
   ) ->
     if angular.isDefined(toState.data.pageTitle)
       $scope.pageTitle = toState.data.pageTitle
+
+    $scope.currentTab = toState.name
 ]

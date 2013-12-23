@@ -22,8 +22,8 @@
         <ul class="side-nav">
           <li><a href="#">Home</a></li>
           <li class="divider"></li>
-          <li><a ui-sref="hiragana">Hiragana</a></li>
-          <li><a ui-sref="katakana">Katakana</a></li>
+          <li ng-class="(currentTab=='hiragana') ? 'active' : ''"><a ui-sref="hiragana">Hiragana</a></li>
+          <li ng-class="(currentTab=='katakana') ? 'active' : ''"><a ui-sref="katakana">Katakana</a></li>
         </ul>
       </div>
 
