@@ -3,10 +3,10 @@ modules = [
   'kana.service'
 ]
 
-hiragana = angular.module 'kana.hiragana', modules
+kana = angular.module 'kana.controller', modules
 
-hiragana.controller 'HiraganaCtrl', ['$scope', 'kanaService', ($scope, kanaService) ->
-  $scope.question = kanaService.getHiraganaQuestion()
+kana.controller 'KanaCtrl', ['$scope', '$state', 'kanaService', ($scope, $state, kanaService) ->
+  $scope.question = kanaService.getQuestion($state.current.name)
   $scope.score =
     right: 0
     wrong: 0
@@ -25,5 +25,5 @@ hiragana.controller 'HiraganaCtrl', ['$scope', 'kanaService', ($scope, kanaServi
           answer: $scope.question.answer
 
       $scope.answer = ''
-      $scope.question = kanaService.getHiraganaQuestion()
+      $scope.question = kanaService.getQuestion($state.current.name)
 ]
