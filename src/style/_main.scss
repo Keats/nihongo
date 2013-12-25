@@ -1,18 +1,60 @@
-.question {
-  text-align: center;
+$correct-colour: #89C343;
+$mistake-colour: #E44E5A;
 
-  h2 {
-    font-size: 3em;
-  }
+.question-container {
+  margin-top: 100px;
 
-  form {
-    input {
-      text-align: center;
+  .question {
+    border-left: 5px solid #ccc;
+
+    strong {
+      color: darken(#ccc, 10);
+    }
+
+    p {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 3em;
     }
   }
 
-  .alert-box {
-    background-color: darkred;
-    border-color: darkred;
+  input {
+    padding: 1em;
+    font-size: 1.5em;
+
+    &.correct {
+      background-color: $correct-colour;
+      color: white;
+    }
+
+    &.mistake {
+      background-color: $mistake-colour;
+      color: white;
+    }
+  }
+
+  .score {
+    font-size: 2em;
+    display: block;
+    text-align: center;
+
+    &.correct {
+      color: $correct-colour;
+      margin-top: 20px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
+
+    &.mistake {
+      color: $mistake-colour;
+      padding-top: 10px;
+    }
+  }
+
+  .correction {
+    background-color: $mistake-colour;
+    display: inline-block;
+    padding: 10px;
+    color: white;
   }
 }
