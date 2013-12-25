@@ -8,16 +8,28 @@ countdown.directive 'countdown', [() ->
     start = $attrs.start
     interval = undefined
 
-    $scope.countdown = start
+    # Main method of the directive, start the countdown using $interval
+    startCountdown = ->
+      $scope.countdown = start
 
-    tick = ->
-      $scope.countdown = $scope.countdown - 1
-      if $scope.countdown == 0
-        $interval.cancel interval
-        $rootScope.$broadcast 'countdown:over'
+      tick = ->
+        $scope.countdown = $scope.countdown - 1
+        if $scope.countdown == 0
+          $interval.cancel interval
+          $rootScope.$broadcast 'countdown:over'
 
-    interval = $interval(tick, 1000)
+      interval = $interval(tick, 1000)
 
+    # Called from a controller to restart the countdown
+    $scope.$on 'countdown:restart', ->
+      $interval.cancel interval
+      startCountdown()
+
+    # Called from a controller to stop the countdown
+    $scope.$on 'countdown:stop', ->
+      $interval.cancel interval
+
+    startCountdown()
   ]
 
 ]
