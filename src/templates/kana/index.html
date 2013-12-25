@@ -3,7 +3,7 @@
 <div class="question-container large-9 columns large-centered">
 
   <div class="sidebar large-3 columns">
-    <countdown start="10"></countdown>
+    <countdown start="5"></countdown>
 
     <span class="score correct">{{ score.right }} ✔</span>
     <span class="score mistake">{{ score.wrong }} ✕</span>
@@ -11,12 +11,14 @@
 
   <div class="question large-9 columns">
     <strong>Recognize the kana (type in japanese or romaji and press enter)</strong>
+
     <p>
       {{ question.kana }}
-      <span class="correction" ng-if="mistake">{{ mistake.answer }}</span></p>
+      <span class="correction" ng-if="correctAnswer==false">{{ question.answer }}</span>
+    </p>
 
     <form ng-submit="checkAnswer()">
-      <input type="text" ng-model="answer" placeholder="Answer" ng-class="{correct: correctAnswer, mistake: mistake}" />
+      <input type="text" ng-model="answer" placeholder="Answer" ng-class="{correct: correctAnswer, mistake: correctAnswer==false}" />
     </form>
 
   </div>
