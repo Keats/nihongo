@@ -4,7 +4,7 @@ countdown.directive 'countdown', [() ->
   restrict: "E"
   replace: true
   template: "<div class='countdown'>{{ countdown }}</div>"
-  controller: ['$scope', '$attrs', '$interval', '$rootScope', ($scope, $attrs, $interval, $rootScope) ->
+  controller: ['$scope', '$element', '$attrs', '$interval', '$rootScope', ($scope, $element, $attrs, $interval, $rootScope) ->
     start = $attrs.start
     interval = undefined
 
@@ -30,6 +30,11 @@ countdown.directive 'countdown', [() ->
       $interval.cancel interval
 
     startCountdown()
+
+    # Intervals stay even if we change views, so we need to cancel it on
+    # destroy of the element
+    $element.bind '$destroy', ->
+      $interval.cancel interval
   ]
 
 ]
