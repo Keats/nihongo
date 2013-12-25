@@ -20,10 +20,10 @@ kana.controller 'KanaCtrl', ['$scope', '$state', '$timeout', 'kanaService', ($sc
     $scope.question = kanaService.getQuestion($state.current.name)
 
 
-  $scope.checkAnswer = () ->
+  $scope.checkAnswer = (isTimeout) ->
     delay = 1000
 
-    if $scope.answer and not $scope.answered
+    if $scope.answer and not $scope.answered or isTimeout
       $scope.answered = true
       if $scope.answer is $scope.question.kana or $scope.answer is $scope.question.answer
         # Do animation and stuff
@@ -40,4 +40,6 @@ kana.controller 'KanaCtrl', ['$scope', '$state', '$timeout', 'kanaService', ($sc
 
       $timeout($scope.resetQuestion, delay)
 
+  $scope.$on 'countdown:over', ->
+    $scope.checkAnswer(true)
 ]

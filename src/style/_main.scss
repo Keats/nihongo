@@ -22,14 +22,29 @@ $mistake-colour: #E44E5A;
     padding: 1em;
     font-size: 1.5em;
 
+    &.correct, &.mistake {
+      color: white;
+
+      ::-webkit-input-placeholder { /* WebKit browsers */
+        color: white;
+      }
+      :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: white;
+      }
+      ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: white;
+      }
+      :-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: white;
+      }
+    }
+
     &.correct {
       background-color: $correct-colour;
-      color: white;
     }
 
     &.mistake {
       background-color: $mistake-colour;
-      color: white;
     }
   }
 
@@ -57,4 +72,11 @@ $mistake-colour: #E44E5A;
     padding: 10px;
     color: white;
   }
+}
+
+.countdown {
+  text-align: center;
+  font-size: 2em;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
 }

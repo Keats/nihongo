@@ -4,7 +4,8 @@ modules = [
 
   'nihongo.kana',
 
-  'ui.router.state'
+  'ui.router.state',
+  'countdown'
 ]
 
 appModule = angular.module('nihongo', modules)
