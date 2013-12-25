@@ -11,15 +11,12 @@
 
   <div class="question large-9 columns">
     <strong>Recognize the kana (type in japanese or romaji and press enter)</strong>
-    <p>{{ question.kana }}</p>
+    <p>
+      {{ question.kana }}
+      <span class="correction" ng-if="mistake">{{ mistake.answer }}</span></p>
 
     <form ng-submit="checkAnswer()">
       <input type="text" ng-model="answer" placeholder="Answer" ng-class="{correct: correctAnswer, mistake: mistake}" />
-
-      <span class="correction" ng-if="mistake">
-        You entered "{{ mistake.entered }}" for {{ mistake.question }}.
-        The answer was "{{ mistake.answer }}".
-      </span>
     </form>
 
   </div>

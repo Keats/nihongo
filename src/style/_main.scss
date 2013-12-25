@@ -67,10 +67,9 @@ $mistake-colour: #E44E5A;
   }
 
   .correction {
-    background-color: $mistake-colour;
     display: inline-block;
-    padding: 10px;
-    color: white;
+    color: $mistake-colour;
+    padding-left: 10px;
   }
 }
 
