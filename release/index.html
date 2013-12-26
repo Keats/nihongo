@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="nihongo" ng-controller="AppCtrl">
+  <head>
+    <title ng-bind="pageTitle"></title>
+
+    <!-- compiled CSS -->
+    
+      <link rel="stylesheet" type="text/css" href="style/app.css" />
+    
+
+    <!-- compiled JavaScript -->
+    
+      <script type="text/javascript" src="scripts/libs.js" charset="utf-8"></script>
+    
+      <script type="text/javascript" src="scripts/app.js" charset="utf-8"></script>
+    
+
+  </head>
+
+  <body>
+
+  <div class="contain-to-grid">
+
+    <nav class="top-bar">
+      <section class="top-bar-section">
+        <!-- Left Nav Section -->
+        <ul class="left">
+          <li ng-class="(currentTab=='hiragana') ? 'active' : ''">
+            <a ui-sref="hiragana">Hiragana</a>
+          </li>
+          <li ng-class="(currentTab=='katakana') ? 'active' : ''">
+            <a ui-sref="katakana">Katakana</a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+
+  </div>
+
+  <div class="row" ui-view></div>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-43335571-1', 'vincent.is');
+    ga('send', 'pageview');
+  </script>
+
+  </body>
+
+</html>
