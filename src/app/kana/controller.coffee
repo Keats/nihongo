@@ -42,6 +42,7 @@ kana.controller 'KanaCtrl', ['$scope', '$state', '$timeout', 'kanaService', ($sc
 
   # Event will be emitted by the directive when the countdown reaches 0
   $scope.$on 'countdown:over', ->
+    $scope.score.wrong += 1
     $scope.correctAnswer = false
     transitionToNextQuestion()
 ]
