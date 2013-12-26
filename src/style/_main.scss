@@ -25,16 +25,16 @@ $mistake-colour: #E44E5A;
     &.correct, &.mistake {
       color: white;
 
-      ::-webkit-input-placeholder { /* WebKit browsers */
+      &::-webkit-input-placeholder { /* WebKit browsers */
         color: white;
       }
-      :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
         color: white;
       }
-      ::-moz-placeholder { /* Mozilla Firefox 19+ */
+      &::-moz-placeholder { /* Mozilla Firefox 19+ */
         color: white;
       }
-      :-ms-input-placeholder { /* Internet Explorer 10+ */
+      &:-ms-input-placeholder { /* Internet Explorer 10+ */
         color: white;
       }
     }
