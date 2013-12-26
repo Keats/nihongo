@@ -2,10 +2,9 @@ countdown = angular.module 'countdown', []
 
 countdown.directive 'countdown', [() ->
   restrict: "E"
-  replace: true
   template: "<div class='countdown'>{{ countdown }}</div>"
   controller: ['$scope', '$element', '$attrs', '$interval', '$rootScope', ($scope, $element, $attrs, $interval, $rootScope) ->
-    start = $attrs.start
+    start = parseInt($attrs.start, 10)
     interval = undefined
 
     # Main method of the directive, start the countdown using $interval
